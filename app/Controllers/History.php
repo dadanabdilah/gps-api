@@ -48,19 +48,33 @@ class History extends ResourceController
      */
     public function create()
     {
-        if($this->model->save([
-            'user_id' =>$this->request->getPost('user_id'), 
-            'latitude' =>$this->request->getPost('latitude'), 
-            'longitude' => $this->request->getPost('longitude'), 
-        ]) ){
-            echo json_encode([
-                'status' => true,
-                'message' => 'Data berhasil disimpan'
-            ]);
+        // cek token 
+        $request = \Config\Services::request();
+
+        // ambil token dari tabel token di db
+        $token = "qwertyuiop";
+
+        if( $request->header('Token')->getValue() == $token) {
+
+            if($this->model->save([
+                'user_id' => $this->request->getPost('user_id'), 
+                'latitude' => $this->request->getPost('latitude'), 
+                'longitude' => $this->request->getPost('longitude'), 
+            ]) ){
+                echo json_encode([
+                    'status' => true,
+                    'message' => 'Data berhasil disimpan'
+                ]);
+            } else {
+                echo json_encode([
+                    'status' => false,
+                    'message' => 'Data gagal disimpan'
+                ]);
+            }
         } else {
             echo json_encode([
                 'status' => false,
-                'message' => 'Data gagal disimpan'
+                'message' => 'Your token is fail'
             ]);
         }
     }

@@ -11,10 +11,10 @@ class User extends Model
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
-    protected $returnType       = 'array';
+    protected $returnType       = 'object';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = ['name','email','password','gender','no_hp','address','level','created_at','updated_at','deleted_at'];
 
     // Dates
     protected $useTimestamps = false;

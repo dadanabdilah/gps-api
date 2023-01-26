@@ -4,17 +4,17 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class History extends Model
+class Token extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'histories';
+    protected $table            = 'tokens';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
     protected $returnType       = 'object';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['user_id', 'latitude', 'longitude','created_at','updated_at','deleted_at'];
+    protected $allowedFields    = ['user_id','token','created_at','updated_at','deleted_at'];
 
     // Dates
     protected $useTimestamps = true;
