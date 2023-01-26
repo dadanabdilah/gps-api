@@ -56,6 +56,9 @@ class History extends ResourceController
 
         if( $request->header('Token')->getValue() == $token) {
 
+            // ambil id user berdasarkan token
+            $id = 1;
+
             if($this->model->save([
                 'user_id' => $this->request->getPost('user_id'), 
                 'latitude' => $this->request->getPost('latitude'), 
