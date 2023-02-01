@@ -60,7 +60,7 @@ class History extends ResourceController
             $id = 1;
 
             if($this->model->save([
-                'user_id' => $this->request->getPost('user_id'), 
+                'user_id' => $id, 
                 'latitude' => $this->request->getPost('latitude'), 
                 'longitude' => $this->request->getPost('longitude'), 
             ]) ){
