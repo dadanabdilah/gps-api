@@ -76,7 +76,7 @@ class History extends ResourceController
 //                 'message' => 'Your token is fail'
 //             ]);
 //         }
-//     }
+    }
 
     /**
      * Return the editable properties of a resource object
