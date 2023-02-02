@@ -14,7 +14,7 @@ class History extends ResourceController
      */
     public function index()
     {
-        print_r(json_encode($this->model->orderBy('creatde_at DESC')->findAll()));
+        print_r(json_encode($this->model->orderBy('created_at DESC')->findAll()));
     }
 
     /**
