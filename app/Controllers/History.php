@@ -57,8 +57,8 @@ class History extends ResourceController
 
             if($this->model->save([
                 'user_id' => $id, 
-                'latitude' => $this->request->getPost('latitude'), 
-                'longitude' => $this->request->getPost('longitude'), 
+                'latitude' => $this->request->getVar('latitude'), 
+                'longitude' => $this->request->getVar('longitude'), 
             ]) ){
                 echo json_encode([
                     'status' => true,
