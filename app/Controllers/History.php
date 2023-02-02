@@ -14,11 +14,7 @@ class History extends ResourceController
      */
     public function index()
     {
-        $data = [
-            'title' => 'History',
-            'sub-title' => 'History',
-        ];
-        return view('history/index', $data);
+        print_r($this->model->findAll());
     }
 
     /**
