@@ -42,7 +42,7 @@ class History extends ResourceController
      *
      * @return mixed
      */
-    public function create()
+    public function create($latitude = "", $longitude = "")
     {
         // cek token 
         $request = \Config\Services::request();
