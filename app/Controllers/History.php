@@ -50,7 +50,7 @@ class History extends ResourceController
         // ambil token dari tabel token di db
         $token = "qwertyuiop";
 
-        if( $request->header('Token')->getValue() == $token) {
+//         if( $request->header('Token')->getValue() == $token) {
 
             // ambil id user berdasarkan token
             $id = 1;
@@ -70,13 +70,13 @@ class History extends ResourceController
                     'message' => 'Data gagal disimpan'
                 ]);
             }
-        } else {
-            echo json_encode([
-                'status' => false,
-                'message' => 'Your token is fail'
-            ]);
-        }
-    }
+//         } else {
+//             echo json_encode([
+//                 'status' => false,
+//                 'message' => 'Your token is fail'
+//             ]);
+//         }
+//     }
 
     /**
      * Return the editable properties of a resource object
